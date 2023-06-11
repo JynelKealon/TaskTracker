@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Document</title>
+</head>
+<body>
+  <div id="tasks" class="header">
+    <h2>Task Tracker</h2>
+    <input type="text" id="myInput" placeholder="Tracking">
+    <span onclick="newElement()" class="addButton">Add Task</span>
+    <div class="tasks"></div>
+    <ul id="taskList" class="checked" class="close">
+      
+
+       
+    </ul>
+  </div>
+  <script src="app.js"></script> 
+  <script src="script.js"></script>
+  <script src="new.js"></script>
+  <script src="new1.js"></script>
+
+  <script>
+    // Fetch tasks from Node.js backend
+    fetch('tasks.json')
+      .then(response => response.json())
+      .then(tasks => {
+        const taskList = document.getElementById('taskList');
+
+        // Populate the task list
+        tasks.forEach(task => {
+          const li = document.createElement('li');
+          li.textContent = task;
+          taskList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error fetching tasks:', error));
+  </script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Task Tracker</title>
+</head>
+<body>
+  <h1>Task Tracker</h1>
+
+  <ul id="taskList" class="checked" class="close"></ul>
+
+  <script>
+    // Fetch tasks from Node.js backend
+    fetch('tasks.json')
+      .then(response => response.json())
+      .then(tasks => {
+        const taskList = document.getElementById('taskList');
+
+        // Populate the task list
+        tasks.forEach(task => {
+          const li = document.createElement('li');
+          li.textContent = task;
+          taskList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error fetching tasks:', error));
+  </script>
+  <script src="app.js"></script>
+</body>
+</html> -->

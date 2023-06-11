@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: white;
+    font-size: 18px;
+    transition: 0.2s;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+ul li:nth-child(even) {
+    background: lightgray;
+}
+
+ul li:hover {
+    background-color: cornflowerblue;
+}
+
+ul li.checked {
+    background: gray;
+    color: white;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: black;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+
