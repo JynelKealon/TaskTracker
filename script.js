@@ -1,4 +1,4 @@
-// Imports the express modules and sets it to variables 
+ // Imports the express modules and sets it to variables 
 const express = require('express');
 const app = express();
 app.use(express.json());
@@ -34,12 +34,3 @@ app.post('/tasks', (req, res) => {
 app.listen(3000, () => {
   console.log('Server is running on port 3000.');
 });
-
-fetch('/tasks', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ /* your data here */ })
-  })
-  
